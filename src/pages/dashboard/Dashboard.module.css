@@ -52,12 +52,20 @@
 @media (max-width: 1200px) {
   .statsGrid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .statsGrid {
     grid-template-columns: 1fr;
+    gap: 0.875rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .statsGrid {
+    gap: 0.75rem;
   }
 }
 
@@ -530,4 +538,283 @@
   border-color: var(--primary-cyan);
   background: rgba(0, 212, 170, 0.05);
   transform: translateY(-2px);
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+  .dashboard {
+    gap: 1.25rem;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.875rem;
+  }
+
+  .header h1 {
+    font-size: 1.375rem;
+    line-height: 1.3;
+  }
+
+  .header p {
+    font-size: 0.875rem;
+  }
+
+  .addBtn {
+    width: 100%;
+    justify-content: center;
+    padding: 0.875rem 1.25rem;
+    font-size: 0.9375rem;
+  }
+
+  .statCard {
+    padding: 1.125rem;
+    gap: 0.875rem;
+  }
+
+  .statIcon {
+    width: 42px;
+    height: 42px;
+  }
+
+  .statIcon svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .statTitle {
+    font-size: 0.8125rem;
+  }
+
+  .statValue {
+    font-size: 1.5rem;
+  }
+
+  .statChange {
+    font-size: 0.6875rem;
+  }
+
+  .mainGrid {
+    gap: 1rem;
+  }
+
+  .card {
+    padding: 1.125rem;
+  }
+
+  .cardHeader {
+    margin-bottom: 1rem;
+  }
+
+  .cardHeader h2 {
+    font-size: 1rem;
+  }
+
+  .viewAll {
+    font-size: 0.8125rem;
+  }
+
+  .taskItem {
+    padding: 0.75rem;
+    gap: 0.625rem;
+  }
+
+  .taskCheck {
+    width: 28px;
+    height: 28px;
+  }
+
+  .taskTitle {
+    font-size: 0.9375rem;
+  }
+
+  .taskMeta {
+    font-size: 0.6875rem;
+  }
+
+  .taskPriority {
+    padding: 0.1875rem 0.5rem;
+    font-size: 0.5625rem;
+  }
+
+  .pipelineChart {
+    height: 160px;
+    gap: 0.625rem;
+  }
+
+  .stageBar {
+    height: 100px;
+  }
+
+  .stageCount {
+    font-size: 1rem;
+  }
+
+  .stageName {
+    font-size: 0.5625rem;
+  }
+
+  .appointmentItem {
+    padding: 0.75rem;
+    gap: 0.625rem;
+  }
+
+  .appointmentIcon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .appointmentIcon svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .appointmentTitle {
+    font-size: 0.9375rem;
+  }
+
+  .appointmentMeta,
+  .appointmentLocation {
+    font-size: 0.6875rem;
+  }
+
+  .appointmentType {
+    padding: 0.1875rem 0.5rem;
+    font-size: 0.5625rem;
+  }
+
+  .activityItem {
+    padding: 0.625rem 0;
+    gap: 0.625rem;
+  }
+
+  .activityDot {
+    width: 10px;
+    height: 10px;
+  }
+
+  .activityLine {
+    width: 10px;
+  }
+
+  .activityContent p {
+    font-size: 0.8125rem;
+  }
+
+  .activityTime {
+    font-size: 0.6875rem;
+  }
+
+  .quickActions {
+    padding: 1.125rem;
+  }
+
+  .quickActions h2 {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .actionGrid {
+    gap: 0.75rem;
+  }
+
+  .actionCard {
+    padding: 1.125rem;
+    gap: 0.625rem;
+  }
+
+  .actionCard svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .actionCard span {
+    font-size: 0.8125rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard {
+    gap: 1rem;
+  }
+
+  .header h1 {
+    font-size: 1.25rem;
+  }
+
+  .header p {
+    font-size: 0.8125rem;
+  }
+
+  .addBtn {
+    padding: 0.75rem 1rem;
+    font-size: 0.875rem;
+  }
+
+  .statCard {
+    padding: 1rem 0.875rem;
+    gap: 0.75rem;
+  }
+
+  .statIcon {
+    width: 38px;
+    height: 38px;
+  }
+
+  .statIcon svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .statValue {
+    font-size: 1.375rem;
+  }
+
+  .mainGrid {
+    gap: 0.875rem;
+  }
+
+  .card {
+    padding: 1rem;
+  }
+
+  .cardHeader {
+    margin-bottom: 0.875rem;
+  }
+
+  .cardHeader h2 {
+    font-size: 0.9375rem;
+  }
+
+  .taskItem,
+  .appointmentItem {
+    padding: 0.625rem;
+  }
+
+  .pipelineChart {
+    height: 140px;
+    gap: 0.5rem;
+  }
+
+  .stageBar {
+    height: 80px;
+  }
+
+  .stageCount {
+    font-size: 0.9375rem;
+  }
+
+  .quickActions {
+    padding: 1rem;
+  }
+
+  .actionCard {
+    padding: 1rem 0.875rem;
+  }
+
+  .emptyState {
+    padding: 1.5rem 1rem;
+    font-size: 0.875rem;
+  }
 }

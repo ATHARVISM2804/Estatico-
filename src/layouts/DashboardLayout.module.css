@@ -403,12 +403,19 @@
     position: fixed;
     inset: 0;
     background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
     z-index: 99;
+    animation: fadeIn 0.2s ease;
+  }
+
+  .collapseBtn {
+    display: block !important;
   }
 }
 
 @media (max-width: 768px) {
   .topBar {
+    height: 64px;
     padding: 0 16px;
   }
 
@@ -420,7 +427,70 @@
     display: none;
   }
 
+  .topBarRight {
+    gap: 4px;
+  }
+
+  .iconBtn {
+    padding: 8px;
+  }
+
+  .userBtn {
+    padding: 6px;
+  }
+
+  .userBtn svg:last-child {
+    display: none;
+  }
+
+  .dropdown {
+    right: -8px;
+    min-width: 240px;
+  }
+
   .content {
     padding: 20px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .topBar {
+    height: 56px;
+    padding: 0 12px;
+  }
+
+  .topBarRight {
+    gap: 2px;
+  }
+
+  .iconBtn {
+    padding: 6px;
+  }
+
+  .avatar {
+    width: 28px;
+    height: 28px;
+    font-size: 11px;
+  }
+
+  .dropdown {
+    min-width: calc(100vw - 24px);
+    right: -12px;
+  }
+
+  .dropdownHeader {
+    padding: 12px 16px;
+  }
+
+  .notificationItem {
+    padding: 12px 16px;
+  }
+
+  .dropdownItem {
+    padding: 10px 16px;
+  }
+
+  .content {
+    padding: 16px 12px;
   }
 }
