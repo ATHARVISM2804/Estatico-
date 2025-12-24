@@ -198,16 +198,106 @@
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
   .section {
-    padding: 80px 16px;
+    padding: 60px 20px;
+  }
+
+  .header {
+    margin-bottom: 40px;
+  }
+
+  .label {
+    padding: 6px 14px;
+    font-size: 11px;
+    margin-bottom: 16px;
+  }
+
+  .title {
+    font-size: clamp(24px, 6vw, 36px);
+  }
+
+  .stats {
+    gap: 16px;
+    margin-bottom: 50px;
+  }
+
+  .statCard {
+    padding: 24px 16px;
+  }
+
+  .statValue {
+    font-size: 32px;
+  }
+
+  .statLabel {
+    font-size: 13px;
+  }
+
+  .testimonials {
+    gap: 16px;
+    margin-bottom: 50px;
+  }
+
+  .testimonialCard {
+    padding: 24px 20px;
+  }
+
+  .quoteIcon {
+    top: 16px;
+    right: 16px;
+  }
+
+  .rating {
+    margin-bottom: 16px;
+  }
+
+  .content {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+
+  .author {
+    gap: 10px;
+  }
+
+  .avatar {
+    width: 40px;
+    height: 40px;
+    font-size: 14px;
+  }
+
+  .authorName {
+    font-size: 14px;
+  }
+
+  .authorRole {
+    font-size: 12px;
+  }
+
+  .logosGrid {
+    gap: 24px;
+  }
+
+  .logo {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .section {
+    padding: 50px 16px;
   }
 
   .stats {
     grid-template-columns: 1fr;
   }
 
+  .statValue {
+    font-size: 28px;
+  }
+
   .logosGrid {
-    gap: 24px;
+    gap: 20px;
   }
 }

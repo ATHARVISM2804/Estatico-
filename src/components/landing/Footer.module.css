@@ -404,42 +404,126 @@
 
 @media (max-width: 768px) {
   .footer {
-    padding: 0 16px 32px;
+    padding: 0 20px 32px;
   }
 
   .ctaSection {
-    padding: 32px 24px;
-    margin-bottom: 48px;
+    padding: 28px 20px;
+    margin-bottom: 40px;
+    border-radius: 16px;
   }
 
   .ctaTitle {
-    font-size: 20px;
+    font-size: 18px;
+  }
+
+  .ctaText {
+    font-size: 14px;
+  }
+
+  .ctaActions {
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+  }
+
+  .ctaButton {
+    width: 100%;
+    justify-content: center;
+    padding: 12px 24px;
+    font-size: 14px;
   }
 
   .divider {
-    margin: 32px 0;
+    margin: 28px 0;
+  }
+
+  .tagline {
+    font-size: 13px;
+    margin-bottom: 24px;
+  }
+
+  .newsletter {
+    max-width: 100%;
+  }
+
+  .newsletterLabel {
+    font-size: 12px;
+  }
+
+  .newsletterInput {
+    padding: 10px 14px;
+    font-size: 13px;
+  }
+
+  .newsletterButton {
+    width: 40px;
+    height: 40px;
   }
 
   .links {
     grid-template-columns: 1fr 1fr;
-    gap: 32px;
+    gap: 28px;
+  }
+
+  .linkGroup h4 {
+    font-size: 11px;
+    margin-bottom: 18px;
+  }
+
+  .linkGroup a {
+    font-size: 13px;
+    padding: 8px 0;
   }
 
   .bottom {
     flex-direction: column;
-    gap: 24px;
+    gap: 20px;
     text-align: center;
+    padding-top: 24px;
+  }
+
+  .bottomLinks {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .copyright {
+    font-size: 12px;
+  }
+
+  .bottomLinks a {
+    font-size: 12px;
+  }
+
+  .social {
+    gap: 6px;
+  }
+
+  .socialLink {
+    width: 36px;
+    height: 36px;
   }
 
   .badge {
-    margin: 32px auto 0;
+    margin: 28px auto 0;
+    padding: 8px 16px;
+    font-size: 12px;
   }
 }
 
 @media (max-width: 480px) {
+  .footer {
+    padding: 0 16px 24px;
+  }
+
+  .ctaSection {
+    padding: 24px 16px;
+  }
+
   .links {
     grid-template-columns: 1fr;
-    gap: 28px;
+    gap: 24px;
   }
 
   .social {

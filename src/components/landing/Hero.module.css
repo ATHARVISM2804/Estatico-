@@ -417,22 +417,165 @@
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
   .hero {
-    padding: 120px 16px 60px;
+    padding: 100px 20px 50px;
+    min-height: auto;
+  }
+
+  .container {
+    gap: 40px;
+  }
+
+  .badge {
+    padding: 6px 12px;
+    font-size: 11px;
+    margin-bottom: 16px;
+  }
+
+  .title {
+    font-size: clamp(28px, 8vw, 40px);
+    margin-bottom: 16px;
+    line-height: 1.15;
+  }
+
+  .subtitle {
+    font-size: 15px;
+    margin-bottom: 28px;
+    line-height: 1.6;
+    padding: 0 10px;
   }
 
   .ctas {
     flex-direction: column;
     width: 100%;
+    gap: 12px;
+    margin-bottom: 28px;
+    padding: 0 10px;
   }
 
-  .primaryCta, .secondaryCta {
+  .primaryCta {
     width: 100%;
     justify-content: center;
+    padding: 14px 24px;
+    font-size: 15px;
+  }
+
+  .secondaryCta {
+    width: 100%;
+    justify-content: center;
+    padding: 14px 24px;
+    font-size: 15px;
+  }
+
+  .trust {
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+  }
+
+  .trustItem {
+    font-size: 13px;
+  }
+
+  /* Mockup responsive */
+  .mockupWindow {
+    border-radius: var(--radius-lg);
+  }
+
+  .windowHeader {
+    padding: 10px 14px;
+  }
+
+  .windowDots span {
+    width: 8px;
+    height: 8px;
+  }
+
+  .windowTitle {
+    font-size: 11px;
+  }
+
+  .windowLive {
+    font-size: 10px;
+  }
+
+  .windowContent {
+    padding: 12px;
+  }
+
+  .dashboardPreview {
+    min-height: 200px;
+  }
+
+  .previewSidebar {
+    width: 40px;
+    padding: 8px;
+    gap: 8px;
+  }
+
+  .sidebarItem {
+    height: 24px;
   }
 
   .previewStats {
     grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
+  .statCard {
+    padding: 10px 8px;
+  }
+
+  .statValue {
+    font-size: 14px;
+  }
+
+  .statLabel {
+    font-size: 9px;
+  }
+
+  .previewChart {
+    padding: 12px;
+  }
+
+  .chartBars {
+    gap: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 90px 16px 40px;
+  }
+
+  .title {
+    font-size: clamp(24px, 7vw, 32px);
+  }
+
+  .subtitle {
+    font-size: 14px;
+    padding: 0 5px;
+  }
+
+  .primaryCta, .secondaryCta {
+    padding: 12px 20px;
+    font-size: 14px;
+  }
+
+  .previewHeader {
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+  }
+
+  .previewTitle {
+    width: 100%;
+    height: 16px;
+  }
+
+  .previewActions {
+    width: 60px;
+    height: 20px;
   }
 }

@@ -796,82 +796,202 @@
 /* Responsive */
 @media (max-width: 768px) {
   .section {
-    padding: 80px 16px;
+    padding: 60px 20px;
   }
 
-  .videoCanvas {
-    height: 400px;
+  .header {
+    margin-bottom: 40px;
   }
 
-  .floatCard {
+  .label {
+    padding: 6px 14px;
+    font-size: 12px;
+    margin-bottom: 16px;
+  }
+
+  .title {
+    font-size: clamp(24px, 6vw, 36px);
+    margin-bottom: 14px;
+  }
+
+  .subtitle {
+    font-size: 15px;
+  }
+
+  .decorativeOrb1 {
+    width: 200px;
+    height: 200px;
+    top: -50px;
+    left: -80px;
+  }
+
+  .decorativeOrb2 {
+    width: 180px;
+    height: 180px;
+    bottom: -40px;
+    right: -60px;
+  }
+
+  .videoContainer {
+    border-radius: 12px;
+  }
+
+  .browserFrame {
     padding: 10px 14px;
     gap: 10px;
   }
 
-  .floatCard1 { top: 8%; left: 2%; }
-  .floatCard2 { top: 12%; right: 2%; }
-  .floatCard3 { bottom: 20%; left: 2%; }
-  .floatCard4 { bottom: 10%; right: 2%; }
+  .browserDots {
+    gap: 6px;
+  }
+
+  .browserDot {
+    width: 10px;
+    height: 10px;
+  }
+
+  .videoCanvas {
+    height: 350px;
+  }
+
+  .floatCard {
+    padding: 8px 12px;
+    gap: 8px;
+    border-radius: 8px;
+  }
+
+  .floatCard1 { top: 6%; left: 2%; }
+  .floatCard2 { top: 10%; right: 2%; }
+  .floatCard3 { bottom: 18%; left: 2%; }
+  .floatCard4 { bottom: 8%; right: 2%; }
 
   .cardIcon {
-    width: 32px;
-    height: 32px;
+    width: 28px;
+    height: 28px;
   }
 
   .cardIcon svg {
-    width: 16px;
-    height: 16px;
+    width: 14px;
+    height: 14px;
   }
 
   .cardTitle {
-    font-size: 12px;
+    font-size: 11px;
   }
 
   .cardDesc {
-    font-size: 10px;
+    font-size: 9px;
   }
 
   .logoAnimation {
-    width: 80px;
-    height: 80px;
+    width: 70px;
+    height: 70px;
   }
 
   .logoCenter {
-    width: 40px;
-    height: 40px;
+    width: 36px;
+    height: 36px;
   }
 
   .centralTitle {
-    font-size: 18px;
+    font-size: 16px;
   }
 
   .statsRow {
     flex-direction: column;
-    gap: 8px;
-    padding: 24px 20px;
+    gap: 6px;
+    padding: 20px 16px;
+    border-radius: 12px;
+    margin-top: 20px;
   }
 
   .stat {
-    padding: 20px 16px;
+    padding: 18px 14px;
   }
 
   .statDivider {
-    width: 60%;
+    width: 50%;
     height: 1px;
     background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
   }
 
   .statNumber {
-    font-size: 36px;
+    font-size: 32px;
   }
 
   .statSuffix {
-    font-size: 20px;
+    font-size: 18px;
+  }
+
+  .statLabel {
+    font-size: 12px;
   }
 
   .statIconWrapper {
-    width: 40px;
-    height: 40px;
-    margin-bottom: 12px;
+    width: 36px;
+    height: 36px;
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .section {
+    padding: 50px 16px;
+  }
+
+  .videoCanvas {
+    height: 280px;
+  }
+
+  .floatCard {
+    padding: 6px 10px;
+    gap: 6px;
+  }
+
+  .cardIcon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .cardTitle {
+    font-size: 10px;
+  }
+
+  .cardDesc {
+    display: none;
+  }
+
+  .logoAnimation {
+    width: 60px;
+    height: 60px;
+  }
+
+  .logoCenter {
+    width: 30px;
+    height: 30px;
+  }
+
+  .centralTitle {
+    font-size: 14px;
+  }
+
+  .statsRow {
+    padding: 16px 12px;
+  }
+
+  .stat {
+    padding: 14px 12px;
+  }
+
+  .statNumber {
+    font-size: 28px;
+  }
+
+  .statSuffix {
+    font-size: 16px;
+  }
+
+  .statLabel {
+    font-size: 11px;
   }
 }

@@ -281,26 +281,144 @@
 @media (max-width: 1024px) {
   .flow {
     grid-template-columns: 1fr;
-    gap: 60px;
+    gap: 40px;
   }
 
   .arrow {
     flex-direction: row;
+    justify-content: center;
   }
 
   .arrowLine {
-    width: 200px;
+    width: 150px;
     height: 2px;
     background: linear-gradient(90deg, rgba(239, 68, 68, 0.5) 0%, var(--primary-cyan) 100%);
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
   .section {
-    padding: 80px 16px;
+    padding: 60px 20px;
+  }
+
+  .header {
+    margin-bottom: 50px;
+  }
+
+  .label {
+    padding: 6px 14px;
+    font-size: 11px;
+    margin-bottom: 16px;
+  }
+
+  .title {
+    font-size: clamp(24px, 6vw, 36px);
+  }
+
+  .chaosLabel {
+    font-size: 11px;
+  }
+
+  .problemCard {
+    padding: 18px 16px;
+    gap: 12px;
+  }
+
+  .problemIcon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .problemTitle {
+    font-size: 15px;
+  }
+
+  .problemDesc {
+    font-size: 13px;
+  }
+
+  .arrow {
+    gap: 12px;
+  }
+
+  .arrowIcon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .arrowLine {
+    width: 100px;
+  }
+
+  .arrowLabel {
+    font-size: 10px;
+  }
+
+  .successLabel {
+    font-size: 11px;
+    margin-bottom: 12px;
+  }
+
+  .solutionCard {
+    padding: 28px 20px;
+  }
+
+  .solutionIcon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 16px;
+  }
+
+  .solutionTitle {
+    font-size: 20px;
+    margin-bottom: 16px;
+  }
+
+  .benefits {
+    gap: 10px;
+    margin-bottom: 24px;
+  }
+
+  .benefits li {
+    font-size: 14px;
+    padding-left: 24px;
   }
 
   .stats {
     flex-wrap: wrap;
+    gap: 16px;
+    padding-top: 20px;
+  }
+
+  .stat {
+    flex: 1 1 auto;
+    min-width: 80px;
+  }
+
+  .statValue {
+    font-size: 22px;
+  }
+
+  .statLabel {
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 480px) {
+  .section {
+    padding: 50px 16px;
+  }
+
+  .problemCard {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .solutionCard {
+    padding: 24px 16px;
+  }
+
+  .stats {
+    justify-content: center;
   }
 }

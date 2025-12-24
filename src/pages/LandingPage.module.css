@@ -301,12 +301,71 @@
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
+  .navContainer {
+    padding: 0 20px;
+  }
+
   .logoImage {
-    height: 42px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .logoText {
+    font-size: 1.25rem;
   }
   
   .navScrolled .logoImage {
-    height: 38px;
+    width: 36px;
+    height: 36px;
+  }
+
+  .mobileMenuBtn {
+    padding: 8px;
+    border-radius: 10px;
+  }
+
+  .mobileMenu {
+    left: 16px;
+    right: 16px;
+    margin-top: 8px;
+    padding: 16px;
+    border-radius: 16px;
+  }
+
+  .mobileMenu a {
+    font-size: 0.95rem;
+    padding: 12px 16px;
+  }
+
+  .mobileMenuActions {
+    gap: 8px;
+    margin-top: 10px;
+    padding-top: 14px;
+  }
+
+  .mobileMenuActions .ctaBtn {
+    padding: 12px 20px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .navContainer {
+    padding: 0 16px;
+  }
+
+  .logoImage {
+    width: 36px;
+    height: 36px;
+  }
+
+  .logoText {
+    font-size: 1.1rem;
+  }
+
+  .mobileMenu {
+    left: 12px;
+    right: 12px;
   }
 }
 

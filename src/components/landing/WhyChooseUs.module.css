@@ -343,9 +343,101 @@
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
   .section {
-    padding: 80px 16px;
+    padding: 60px 20px;
+  }
+
+  .header {
+    margin-bottom: 50px;
+  }
+
+  .label {
+    padding: 6px 14px;
+    font-size: 11px;
+    margin-bottom: 16px;
+  }
+
+  .title {
+    font-size: clamp(24px, 6vw, 36px);
+    margin-bottom: 14px;
+  }
+
+  .subtitle {
+    font-size: 15px;
+  }
+
+  .metrics {
+    gap: 16px;
+    margin-bottom: 50px;
+  }
+
+  .metricCard {
+    padding: 28px 18px;
+  }
+
+  .metricIcon {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 16px;
+  }
+
+  .metricValue {
+    font-size: 36px;
+  }
+
+  .metricLabel {
+    font-size: 13px;
+  }
+
+  .benefits {
+    gap: 16px;
+    margin-bottom: 50px;
+  }
+
+  .benefitCard {
+    padding: 28px 20px;
+  }
+
+  .benefitIcon {
+    width: 52px;
+    height: 52px;
+    margin-bottom: 18px;
+  }
+
+  .benefitTitle {
+    font-size: 17px;
+    margin-bottom: 10px;
+  }
+
+  .benefitDescription {
+    font-size: 14px;
+  }
+
+  .ctaSection {
+    padding: 32px 20px;
+  }
+
+  .checkpoints {
+    gap: 10px;
+  }
+
+  .checkpoint {
+    font-size: 14px;
+    gap: 10px;
+  }
+
+  .ctaButton {
+    padding: 14px 28px;
+    font-size: 15px;
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .section {
+    padding: 50px 16px;
   }
 
   .metrics {
@@ -353,14 +445,14 @@
   }
 
   .metricValue {
-    font-size: 40px;
+    font-size: 32px;
   }
 
   .ctaSection {
-    padding: 40px 24px;
+    padding: 28px 16px;
   }
 
-  .checkpoints {
-    gap: 12px;
+  .checkpoint {
+    font-size: 13px;
   }
 }

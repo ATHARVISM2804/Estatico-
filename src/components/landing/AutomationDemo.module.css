@@ -366,9 +366,38 @@
 
 /* Responsive */
 @media (max-width: 768px) {
+  .section {
+    padding: 60px 20px;
+  }
+
+  .header {
+    margin-bottom: 50px;
+  }
+
+  .label {
+    padding: 6px 14px;
+    font-size: 11px;
+    margin-bottom: 16px;
+  }
+
+  .title {
+    font-size: clamp(24px, 6vw, 36px);
+    margin-bottom: 14px;
+  }
+
+  .subtitle {
+    font-size: 15px;
+  }
+
+  .demo {
+    gap: 32px;
+  }
+
   .flowContainer {
     flex-wrap: wrap;
-    gap: 24px;
+    gap: 20px;
+    padding: 28px 16px;
+    justify-content: center;
   }
 
   .connector {
@@ -376,12 +405,117 @@
   }
 
   .flowStep {
-    flex: 0 0 calc(33.33% - 16px);
+    flex: 0 0 calc(33.33% - 14px);
+    min-width: 80px;
+  }
+
+  .stepCircle {
+    width: 60px;
+    height: 60px;
+    min-width: 60px;
+    min-height: 60px;
+  }
+
+  .stepCircle svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .checkmark {
+    width: 16px;
+    height: 16px;
+    font-size: 10px;
+  }
+
+  .stepLabel {
+    font-size: 11px;
+  }
+
+  .detailCard {
+    padding: 24px 18px;
+  }
+
+  .detailHeader {
+    gap: 10px;
+    margin-bottom: 16px;
+    padding-bottom: 14px;
+  }
+
+  .detailIcon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .detailTitle {
+    font-size: 16px;
+  }
+
+  .detailContent {
+    min-height: 100px;
+  }
+
+  .detailContent p {
+    font-size: 14px;
+    margin-bottom: 14px;
+  }
+
+  .detailMeta {
+    gap: 12px;
+    font-size: 12px;
+  }
+
+  .emailPreview, .taskPreview, .calendarPreview, .followupPreview {
+    padding: 14px;
+  }
+
+  .emailSubject {
+    font-size: 13px;
+  }
+
+  .emailBody {
+    font-size: 12px;
+  }
+
+  .taskItem {
+    font-size: 13px;
+    gap: 10px;
+  }
+
+  .taskPriority {
+    padding: 3px 6px;
+    font-size: 10px;
+  }
+
+  .taskDue {
+    font-size: 11px;
   }
 }
 
 @media (max-width: 480px) {
+  .section {
+    padding: 50px 16px;
+  }
+
+  .flowContainer {
+    padding: 24px 14px;
+  }
+
   .flowStep {
-    flex: 0 0 calc(50% - 12px);
+    flex: 0 0 calc(50% - 10px);
+  }
+
+  .stepCircle {
+    width: 52px;
+    height: 52px;
+    min-width: 52px;
+    min-height: 52px;
+  }
+
+  .stepLabel {
+    font-size: 10px;
+  }
+
+  .detailCard {
+    padding: 20px 14px;
   }
 }
