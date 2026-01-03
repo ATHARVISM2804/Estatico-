@@ -686,3 +686,54 @@
     max-width: 100%;
   }
 }
+
+/* Add at the end of the file */
+
+.spinner {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.submitMessage {
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  animation: fadeIn 0.3s ease-in;
+}
+
+.submitMessage.success {
+  color: #10b981;
+}
+
+.submitMessage.error {
+  color: #ef4444;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.newsletterButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.newsletterInput:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

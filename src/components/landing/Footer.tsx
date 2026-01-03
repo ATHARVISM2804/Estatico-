@@ -147,6 +147,12 @@ const modalData: Record<string, ModalContent> = {
 
 export default function Footer() {
   const [activeModal, setActiveModal] = useState<string | null>(null);
+  const [email, setEmail] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitMessage, setSubmitMessage] = useState<{ type: 'success' | 'error', text: string } | null>(null);
+
+  // Replace with your actual Google Apps Script Web App URL
+  const GOOGLE_SCRIPT_URL = 'YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE';
 
   const openModal = (key: string) => (e: React.MouseEvent) => {
     e.preventDefault();
@@ -154,6 +160,40 @@ export default function Footer() {
   };
 
   const closeModal = () => setActiveModal(null);
+
+  const handleNewsletterSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (!email || !email.includes('@')) {
+      setSubmitMessage({ type: 'error', text: 'Please enter a valid email address' });
+      return;
+    }
+
+    setIsSubmitting(true);
+    setSubmitMessage(null);
+
+    try {
+      const response = await fetch(GOOGLE_SCRIPT_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email }),
+      });
+
+      // Note: With no-cors mode, we can't read the response
+      // We'll assume success if no error is thrown
+      setSubmitMessage({ type: 'success', text: 'Successfully subscribed!' });
+      setEmail('');
+    } catch (error) {
+      setSubmitMessage({ type: 'error', text: 'Failed to subscribe. Please try again.' });
+    } finally {
+      setIsSubmitting(false);
+      // Clear message after 3 seconds
+      setTimeout(() => setSubmitMessage(null), 3000);
+    }
+  };
 
   return (
     <footer className={styles.footer}>
@@ -197,18 +237,37 @@ export default function Footer() {
             {/* Newsletter signup */}
             <div className={styles.newsletter}>
               <p className={styles.newsletterLabel}>Subscribe to our newsletter</p>
-              <div className={styles.newsletterForm}>
+              <form onSubmit={handleNewsletterSubmit} className={styles.newsletterForm}>
                 <input 
                   type="email" 
                   placeholder="Enter your email" 
                   className={styles.newsletterInput}
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  disabled={isSubmitting}
+                  required
                 />
-                <button className={styles.newsletterButton}>
-                  <svg viewBox="0 0 20 20" fill="none" width="18" height="18">
-                    <path d="M3 10h14m0 0l-4-4m4 4l-4 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
+                <button 
+                  type="submit" 
+                  className={styles.newsletterButton}
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? (
+                    <svg className={styles.spinner} viewBox="0 0 20 20" fill="none" width="18" height="18">
+                      <circle cx="10" cy="10" r="8" stroke="currentColor" strokeWidth="2" strokeDasharray="50" strokeDashoffset="25" opacity="0.5"/>
+                    </svg>
+                  ) : (
+                    <svg viewBox="0 0 20 20" fill="none" width="18" height="18">
+                      <path d="M3 10h14m0 0l-4-4m4 4l-4 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  )}
                 </button>
-              </div>
+              </form>
+              {submitMessage && (
+                <p className={`${styles.submitMessage} ${styles[submitMessage.type]}`}>
+                  {submitMessage.text}
+                </p>
+              )}
             </div>
           </div>
 
