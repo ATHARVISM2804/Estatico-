@@ -302,13 +302,7 @@ export default function Footer() {
             <p className={styles.copyright}>
               © {new Date().getFullYear()} Estatico. All rights reserved.
             </p>
-            <div className={styles.bottomLinks}>
-              <a href="#">Privacy</a>
-              <span className={styles.dotDivider}>•</span>
-              <a href="#">Terms</a>
-              <span className={styles.dotDivider}>•</span>
-              <a href="#">Sitemap</a>
-            </div>
+            
           </div>
           
           <div className={styles.social}>
