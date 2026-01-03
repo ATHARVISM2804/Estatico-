@@ -1,7 +1,160 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './Footer.module.css';
 
+interface ModalContent {
+  title: string;
+  items: { label: string; value: string }[];
+}
+
+const modalData: Record<string, ModalContent> = {
+  // Resources
+  'Help Center': {
+    title: 'Help Center',
+    items: [
+      { label: 'Support Hours', value: '24/7 Available' },
+      { label: 'Response Time', value: 'Under 2 hours' },
+      { label: 'Live Chat', value: 'Available' },
+      { label: 'Knowledge Base', value: '500+ Articles' },
+      { label: 'Video Tutorials', value: '100+ Videos' },
+      { label: 'Email Support', value: 'support@estatico.com' },
+    ],
+  },
+  'API Docs': {
+    title: 'API Documentation',
+    items: [
+      { label: 'API Version', value: 'v2.0 (Latest)' },
+      { label: 'Authentication', value: 'OAuth 2.0 / API Keys' },
+      { label: 'Rate Limit', value: '1000 requests/min' },
+      { label: 'Endpoints', value: '50+ RESTful APIs' },
+      { label: 'SDKs', value: 'Python, Node.js, PHP' },
+      { label: 'Sandbox', value: 'Available for testing' },
+    ],
+  },
+  'Integrations': {
+    title: 'Integrations',
+    items: [
+      { label: 'CRM Systems', value: 'Salesforce, HubSpot, Zoho' },
+      { label: 'Email Platforms', value: 'Gmail, Outlook, Mailchimp' },
+      { label: 'MLS Systems', value: '500+ MLS Supported' },
+      { label: 'Calendar', value: 'Google, Outlook, iCal' },
+      { label: 'Payment', value: 'Stripe, PayPal' },
+      { label: 'Social Media', value: 'Facebook, Instagram, LinkedIn' },
+    ],
+  },
+  'Status': {
+    title: 'System Status',
+    items: [
+      { label: 'Current Status', value: '✅ All Systems Operational' },
+      { label: 'Uptime (30 days)', value: '99.99%' },
+      { label: 'API Status', value: '✅ Operational' },
+      { label: 'Database', value: '✅ Operational' },
+      { label: 'Last Incident', value: 'None in 90 days' },
+      { label: 'Maintenance', value: 'Sundays 2-4 AM EST' },
+    ],
+  },
+  // Legal
+  'Privacy Policy': {
+    title: 'Privacy Policy',
+    items: [
+      { label: 'Data Collection', value: 'Minimal & Transparent' },
+      { label: 'Data Storage', value: 'Encrypted (AES-256)' },
+      { label: 'Data Sharing', value: 'Never sold to 3rd parties' },
+      { label: 'GDPR Compliant', value: '✅ Yes' },
+      { label: 'CCPA Compliant', value: '✅ Yes' },
+      { label: 'Data Deletion', value: 'On request within 30 days' },
+    ],
+  },
+  'Terms of Service': {
+    title: 'Terms of Service',
+    items: [
+      { label: 'Account Age', value: '18+ Required' },
+      { label: 'Free Trial', value: '14 days, no CC required' },
+      { label: 'Cancellation', value: 'Anytime, no fees' },
+      { label: 'Refund Policy', value: '30-day money back' },
+      { label: 'Usage Rights', value: 'Commercial allowed' },
+      { label: 'SLA Guarantee', value: '99.9% uptime' },
+    ],
+  },
+  'Security': {
+    title: 'Security',
+    items: [
+      { label: 'Encryption', value: 'TLS 1.3 / AES-256' },
+      { label: 'Authentication', value: '2FA / SSO Available' },
+      { label: 'SOC 2', value: '✅ Type II Certified' },
+      { label: 'Penetration Testing', value: 'Quarterly' },
+      { label: 'Bug Bounty', value: 'Active Program' },
+      { label: 'Data Centers', value: 'AWS (US, EU, Asia)' },
+    ],
+  },
+  'Cookies': {
+    title: 'Cookie Policy',
+    items: [
+      { label: 'Essential Cookies', value: 'Required for function' },
+      { label: 'Analytics Cookies', value: 'Optional (consent)' },
+      { label: 'Marketing Cookies', value: 'Optional (consent)' },
+      { label: 'Cookie Duration', value: '30 days max' },
+      { label: 'Cookie Control', value: 'Full user control' },
+      { label: 'Third-Party', value: 'Google Analytics only' },
+    ],
+  },
+  // Company
+  'About Us': {
+    title: 'About Us',
+    items: [
+      { label: 'Founded', value: '2020' },
+      { label: 'Headquarters', value: 'San Francisco, CA' },
+      { label: 'Team Size', value: '50+ Professionals' },
+      { label: 'Customers', value: '10,000+ Agents' },
+      { label: 'Mission', value: 'Empower RE Professionals' },
+      { label: 'Funding', value: 'Series B ($25M)' },
+    ],
+  },
+  'Blog': {
+    title: 'Blog',
+    items: [
+      { label: 'Topics', value: 'Real Estate, Tech, Tips' },
+      { label: 'Frequency', value: '3 posts/week' },
+      { label: 'Newsletter', value: '25,000+ subscribers' },
+      { label: 'Guest Posts', value: 'Accepting submissions' },
+      { label: 'Podcast', value: 'Coming Q1 2026' },
+      { label: 'Webinars', value: 'Monthly live sessions' },
+    ],
+  },
+  'Careers': {
+    title: 'Careers',
+    items: [
+      { label: 'Open Positions', value: '12 Roles' },
+      { label: 'Remote Work', value: '✅ Fully Remote' },
+      { label: 'Benefits', value: 'Health, 401k, Equity' },
+      { label: 'PTO', value: 'Unlimited' },
+      { label: 'Culture', value: 'Collaborative & Innovative' },
+      { label: 'Apply', value: 'careers@estatico.com' },
+    ],
+  },
+  'Contact': {
+    title: 'Contact Us',
+    items: [
+      { label: 'Email', value: 'hello@estatico.com' },
+      { label: 'Phone', value: '+1 (888) 555-0123' },
+      { label: 'Address', value: '123 Market St, SF, CA' },
+      { label: 'Sales', value: 'sales@estatico.com' },
+      { label: 'Support', value: 'support@estatico.com' },
+      { label: 'Hours', value: 'Mon-Fri 9AM-6PM PST' },
+    ],
+  },
+};
+
 export default function Footer() {
+  const [activeModal, setActiveModal] = useState<string | null>(null);
+
+  const openModal = (key: string) => (e: React.MouseEvent) => {
+    e.preventDefault();
+    setActiveModal(key);
+  };
+
+  const closeModal = () => setActiveModal(null);
+
   return (
     <footer className={styles.footer}>
       {/* Decorative gradient orbs */}
@@ -82,19 +235,19 @@ export default function Footer() {
 
             <div className={styles.linkGroup}>
               <h4>Company</h4>
-              <a href="#">
+              <a href="#" onClick={openModal('About Us')}>
                 <span className={styles.linkIcon}>✦</span>
                 About Us
               </a>
-              <a href="#">
+              <a href="#" onClick={openModal('Blog')}>
                 <span className={styles.linkIcon}>✦</span>
                 Blog
               </a>
-              <a href="#">
+              <a href="#" onClick={openModal('Careers')}>
                 <span className={styles.linkIcon}>✦</span>
                 Careers
               </a>
-              <a href="#">
+              <a href="#" onClick={openModal('Contact')}>
                 <span className={styles.linkIcon}>✦</span>
                 Contact
               </a>
@@ -102,19 +255,19 @@ export default function Footer() {
 
             <div className={styles.linkGroup}>
               <h4>Resources</h4>
-              <a href="#">
+              <a href="#" onClick={openModal('Help Center')}>
                 <span className={styles.linkIcon}>✦</span>
                 Help Center
               </a>
-              <a href="#">
+              <a href="#" onClick={openModal('API Docs')}>
                 <span className={styles.linkIcon}>✦</span>
                 API Docs
               </a>
-              <a href="#">
+              <a href="#" onClick={openModal('Integrations')}>
                 <span className={styles.linkIcon}>✦</span>
                 Integrations
               </a>
-              <a href="#">
+              <a href="#" onClick={openModal('Status')}>
                 <span className={styles.linkIcon}>✦</span>
                 Status
               </a>
@@ -122,19 +275,19 @@ export default function Footer() {
 
             <div className={styles.linkGroup}>
               <h4>Legal</h4>
-              <a href="#">
+              <a href="#" onClick={openModal('Privacy Policy')}>
                 <span className={styles.linkIcon}>✦</span>
                 Privacy Policy
               </a>
-              <a href="#">
+              <a href="#" onClick={openModal('Terms of Service')}>
                 <span className={styles.linkIcon}>✦</span>
                 Terms of Service
               </a>
-              <a href="#">
+              <a href="#" onClick={openModal('Security')}>
                 <span className={styles.linkIcon}>✦</span>
                 Security
               </a>
-              <a href="#">
+              <a href="#" onClick={openModal('Cookies')}>
                 <span className={styles.linkIcon}>✦</span>
                 Cookies
               </a>
@@ -193,6 +346,28 @@ export default function Footer() {
           <span>Made for Real Estate Professionals</span>
         </div>
       </div>
+
+      {/* Modal */}
+      {activeModal && modalData[activeModal] && (
+        <div className={styles.modalOverlay} onClick={closeModal}>
+          <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
+            <button className={styles.modalClose} onClick={closeModal}>
+              <svg viewBox="0 0 24 24" fill="none" width="20" height="20">
+                <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </button>
+            <h3 className={styles.modalTitle}>{modalData[activeModal].title}</h3>
+            <div className={styles.modalContent}>
+              {modalData[activeModal].items.map((item, index) => (
+                <div key={index} className={styles.modalItem}>
+                  <span className={styles.modalLabel}>{item.label}</span>
+                  <span className={styles.modalValue}>{item.value}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
     </footer>
   );
 }
